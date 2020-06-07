@@ -1,0 +1,78 @@
+<!-- cspell:disable -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+  <link rel='stylesheet' href='./index.css'>
+
+  <title>PDFtextMapper Alpha 0.1</title>
+</head>
+
+<body>
+
+  <div style="height: 100%;">
+
+    <div class="row">
+
+      <div class="column">
+        <div class="picker">
+          <button id="load_clist_b">Read Clipboard</button>
+        </div>
+        <div class="viewer">
+          <iframe srcdoc="<body style='line-height: 1.6;'>
+      How to use:<br>
+      <br>1. Read Text from Clipboard. 
+      <br>2. Load PDF files (source and target Language)
+      <br>3. Mark sentence for assignment
+      <br>4. The text will be searched in left PDF.
+      <br>   (if outlines are same, the right PDF will scroll to the corresponding chapter)
+      <br>5. Assign translation text from the right PDF
+      </body>" id="html_clipboard"></iframe>
+        </div>
+
+        <!-- <h2 class="center">WORD DOC HERE</h2> -->
+      </div>
+
+      <div class="column">
+        <div class="picker">
+          <button id="load_de_pdf_b">Select Source PDF</button>
+        </div>
+        <div class="viewer">
+          <iframe id="pdf_view_de"></iframe>
+
+        </div>
+      </div>
+      <div class="column">
+        <div class="picker">
+          <button id="load_fl_pdf_b">Select Target PDF</button>
+        </div>
+        <div class="viewer">
+          <iframe id="pdf_view_fl"></iframe>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
+  <script src='renderer.js'></script>
+  <script>
+      
+    new customTitlebar.Titlebar({
+        backgroundColor: customTitlebar.Color.fromHex('#3B464F')
+    });
+  </script>
+  </script>
+</body>
+
+</html>
