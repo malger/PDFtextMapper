@@ -17,5 +17,3 @@ corresponding text segments of two PDFs (for example manuals in different langua
 * mozilla's pdf.js
 * electron
 
-#### Example
-![example](example.png)
